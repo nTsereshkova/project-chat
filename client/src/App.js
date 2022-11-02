@@ -7,13 +7,24 @@ import './App.css';
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(false);
+  const [isChatsOn, setIsChatsOn] = useState(false);
+  const [isSettingsOn, setSettingsOn] = useState(false);
+  const [isContactsOn, setIsContactsOn] = useState(true);
+
   return (
     <div className="app">
       <Header isAuth={isAuth} setIsAuth={setIsAuth} />
       {isAuth ? (
         <Auth isAuth={isAuth} setIsAuth={setIsAuth} />
       ) : (
-        <Main isAuth={isAuth} />
+        <Main
+          isChatsOn={isChatsOn}
+          setIsChatsOn={setIsChatsOn}
+          isSettingsOn={isSettingsOn}
+          setSettingsOn={setSettingsOn}
+          isContactsOn={isContactsOn}
+          setIsContactsOn={setIsContactsOn}
+        />
       )}
     </div>
   );
