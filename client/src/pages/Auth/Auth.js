@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginHandler } from '../../store/actions/actions';
 import './Auth.css';
 
-const Auth = ({ isAuth, setIsAuth }) => {
+const Auth = () => {
   const [isDisable, setIsDisable] = useState(false);
 
-  const authHandler = () => {
-    setIsAuth(!isAuth);
-  };
+  const dispatch = useDispatch();
+
   return (
     <div className="auth">
       <form className="auth_form">
         <input placeholder="login" />
         <input placeholder="password" />
         <button
-          onClick={authHandler}
+          onClick={() => dispatch(loginHandler())}
           disabled={isDisable}
           type="button"
           className="auth_btn"
@@ -21,7 +22,7 @@ const Auth = ({ isAuth, setIsAuth }) => {
           Sign in
         </button>
         <button
-          onClick={authHandler}
+          onClick={() => dispatch(loginHandler())}
           disabled={isDisable}
           type="button"
           className="auth_btn"

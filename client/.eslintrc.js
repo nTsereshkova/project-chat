@@ -31,7 +31,7 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": 0,
     "react/no-access-state-in-setstate": 1,
-    "prettier/prettier": "error",
+    "prettier/prettier": ["error", { endOfLine: "auto" }],
     "no-unused-vars": 0,
     "no-unused-expressions": 0,
     "import/no-named-as-default": 0,
