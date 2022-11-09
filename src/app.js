@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./routes/index");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const { errorHandler, pageNotFound } = require("./middleware/errorHandler");
 
 const app = express();
 
@@ -19,6 +20,10 @@ app.use((req, res, next) => {
   next();
 });
 app.use(routes);
+
+app.use(errorHandler);
+
+app.use("/", pageNotFound);
 
 // обработчик ошибок
 // страница не найдена
