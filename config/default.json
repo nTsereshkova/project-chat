@@ -1,0 +1,6 @@
+{
+  "port": 5000,
+  "mongoUrl": "mongodb://localhost:27017/RickAndMorty",
+  "baseUrl": "http://localhost:5000",
+  "jwtSecretCode": "Rick and Morty test task"
+}

@@ -1,0 +1,31 @@
+.user_info {
+  height: 90%;
+  min-height: 94vh;
+
+}
+
+.user_info p {
+  padding-left: 20px;
+}
+
+.btn {
+  width: 100px;
+  height: auto;
+  margin: 15px 0;
+  outline: none;
+  background-color:#29ba22;
+  font-family:inherit;
+  color: black;
+  border:none;
+  padding: 5px 10px;
+  margin-left: 20px; 
+}
+
+.btn:hover {
+  background-color: #39da31;
+  color:white;
+}
+.btn:active {
+  background-color: #29ba22;
+  color:black
+}
