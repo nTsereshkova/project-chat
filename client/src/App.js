@@ -41,7 +41,7 @@ const App = () => {
                 <Route path="/sign" element={<Sign />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/" element={<Navigate replace to="/sign" />} />
-                <Route path="*" element={<PageNotfound />} />
+                <Route path="*" element={<PageNotFound />} />
               </>
             )}
           </Routes>
