@@ -1,7 +1,4 @@
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 import authSlice from '../slices/authSlice';
 import mainSlice from '../slices/mainSlice';
 
@@ -32,7 +29,6 @@ export const signInFetch = someData => {
         data: someData,
       })
       .then(res => {
-        // console.log('послали запрос', res);
         if (res.status === 201) {
           console.log('sign in successed');
         }
@@ -42,7 +38,6 @@ export const signInFetch = someData => {
 };
 
 export const loginFetch = someData => {
-  console.log('loginFetch');
   return dispatch => {
     axios
       .post(`api/auth/login`, {
@@ -52,9 +47,7 @@ export const loginFetch = someData => {
         data: someData,
       })
       .then(res => {
-        // console.log('послали запрос', res);
         if (res.status === 201) {
-          console.log('log in successed');
           dispatch(loginHandler(res.data.user));
           dispatch(setTokenHandler(res.data.token));
         }
@@ -65,7 +58,6 @@ export const loginFetch = someData => {
 
 export const fetchCharacters = number => {
   return dispatch => {
-    console.log(number, 'number');
     let pageNumber = number ? number : 0;
     axios
       .get(`https://rickandmortyapi.com/api/character?page=${pageNumber + 1}`)

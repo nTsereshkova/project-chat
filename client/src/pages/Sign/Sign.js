@@ -10,7 +10,6 @@ const Auth = () => {
   const navigate = useNavigate();
   const { error, isError } = useSelector(state => state.auth);
 
-  console.log(error, 'error');
   const [userData, setUserData] = useState({
     login: '',
     email: '',
